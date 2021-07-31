@@ -1,9 +1,11 @@
+const Discord = require("discord.js")
 module.exports = {
 	name: 'cookie',
 	description: 'sends a cookie to a user.',
 	execute(message, args) {
-		message.channel.send('COOKIE TEST');
+		const cookie = new Discord.MessageEmbed()
+		    .setColor('#D9A957')
+			.setDescription(`${message.author} sent a freshly baked cookie to ${message.mentions.members.first()}`)
+		message.channel.send(cookie);
 	},
 };
-
-// This will have more code, just testing to make sure it works. Not too fimilar with this sort of system. 
